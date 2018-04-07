@@ -1,0 +1,22 @@
+{
+  "ip_servers": [
+    "http://icanhazip.com/",
+    "http://members.3322.org/dyndns/getip"
+  ],
+  "dnspod": {
+    "domain": "aaa.com",
+    "sub_domain": "route",
+    "api_token": "id,token",
+    "record_line": "默认",
+    "get_domain_list": "https://dnsapi.cn/Domain.List",
+    "modify_record": "https://dnsapi.cn/Record.Modify",
+    "get_records": "https://dnsapi.cn/Record.List",
+    "create_record": "https://dnsapi.cn/Record.Create"
+  },
+  "server_chan": {
+    "prefix": "https://sc.ftqq.com/",
+    "sc_key": "key"
+  },
+  "mode": "NORMAL",
+  "interval": 10
+}
