@@ -36,7 +36,7 @@ def get_real_ip():
         if r.status_code != 200:
             handler_log(WARN, "Could not get real ip from [%s] http status: %d" % (ip_server, r.status_code))
         else:
-            return r.text
+            return r.text.replace('\n', '').replace('\r', '')
     return None
 
 
@@ -163,7 +163,7 @@ def handler_log(level, message, need_record=False):
         send_server_chan("Debug", message)
     if (mode is None or mode == "NORMAL") and (level >= ERROR or need_record):
         send_server_chan("Error" if level >= ERROR else "Notice", message)
-    if mode == "NIGHT" and not is_night():
+    if mode == "NIGHT" and not is_night() and (level >= ERROR or need_record):
         send_server_chan("Error", message)
 
 
